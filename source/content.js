@@ -1,7 +1,6 @@
 function addWallLink($el) {
 	var tLink = $el.find("img").attr('data-original');
-	var wallLink = tLink.replace("thumbs","wallpapers");
-	var wallLink = wallLink.replace("thumb-","wallpaper-");
+	var wallLink = tLink.replace(/thumb/g,"wallpaper");
 	$el.append('<div class="dl"><a href='+wallLink+'>Download</a></div>');
 }
 
