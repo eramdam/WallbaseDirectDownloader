@@ -4,7 +4,7 @@
 	"manifest_version": 2,
 	"description": "Allows you to download the wallpapers on Wallbase directly from the search pages",
 	"content_scripts": [{
-		"matches": ["http://wallbase.cc/search*","https://wallbase.cc/search*"],
+		"matches": ["http://wallbase.cc/search*","http://wallbase.cc/random*", "http://wallbase.cc/tags*", "http://wallbase.cc/toplist*"],
 		"js": ["jquery.js","content.js"],
 		"css": ["wbs.css"]
 		}],
