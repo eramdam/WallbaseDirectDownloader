@@ -8,9 +8,6 @@
 	z-index: 0;
 	height: 30px;
 	-webkit-transition: top .1s ease-in;
-	-moz-transition: top .1s ease-in;
-	-ms-transition: top .1s ease-in;
-	-o-transition: top .1s ease-in;
 	transition: top .1s ease-in;
 	
 }
