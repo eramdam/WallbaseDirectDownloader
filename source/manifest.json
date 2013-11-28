@@ -8,5 +8,8 @@
 		"js": ["jquery.js","content.js"],
 		"css": ["wbs.css"]
 		}],
-	"web_accessible_resources": ["jquery-2.0.3.min.map", "bg-hover-top.png"]
+	"web_accessible_resources": ["jquery-2.0.3.min.map", "bg-hover-top.png"],
+	"icons": { "16": "icon16.png",
+	           "48": "icon48.png",
+	          "128": "icon128.png" }
 }
