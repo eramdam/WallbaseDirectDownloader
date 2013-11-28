@@ -11,3 +11,9 @@ $(document).ready(function() {
 	});
 });
 
+$("section#thumbs").on("DOMNodeInserted", function(event) {
+
+    if($(event.target).is("div.thumbnail")) {
+	    addWallLink($("> div.wrapper", event.target));
+    }
+});
