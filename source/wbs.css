@@ -1,0 +1,34 @@
+
+.dl {
+	position: absolute;
+	top: -30px;
+	width: 100%;
+	background-image: url("chrome-extension://__MSG_@@extension_id__/bg-hover-top.png");
+	background-repeat: repeat-x;
+	z-index: 0;
+	height: 30px;
+	-webkit-transition: top .1s ease-in;
+	-moz-transition: top .1s ease-in;
+	-ms-transition: top .1s ease-in;
+	-o-transition: top .1s ease-in;
+	transition: top .1s ease-in;
+	
+}
+
+.thumbnail:hover .dl {
+	top: 0;
+}
+
+.dl a {
+	color: white;
+	font-size: 1.4rem;
+	display: inline-block;
+	margin-top: 10px;
+	text-shadow: #000 1px 1px 0;
+}
+
+.thumbnail .closeX, .thumbnail .spr-bg-favs {
+	z-index:999;
+}
+
+

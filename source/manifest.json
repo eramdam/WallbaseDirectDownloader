@@ -1,0 +1,12 @@
+{
+	"name": "Wallbase Download from Search",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Allows you to download the wallpapers on Wallbase directly from the search pages",
+	"content_scripts": [{
+		"matches": ["http://wallbase.cc/search*","https://wallbase.cc/search*"],
+		"js": ["jquery.js","content.js"],
+		"css": ["wbs.css"]
+		}],
+	"web_accessible_resources": ["jquery-2.0.3.min.map", "bg-hover-top.png"]
+}
