@@ -3,25 +3,27 @@
 
 	// Function to add a download link to a thumbnail element
 	var addDownloadLink = function addDownloadLink(element) {
-		var thumbnailImage,
+		if(!element.getElementsByClassName("wbs_dl")[0]) {
+			var thumbnailImage,
 			thumbnailLink,
 			downloadLink,
 			downloadDiv,
 			downloadAnchor;
 
-		// Get the thumbnail URL and create a download URL from it
-		thumbnailImage = element.getElementsByTagName("img")[0];
-		thumbnailLink = thumbnailImage.getAttribute("data-original");
-		downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
+			// Get the thumbnail URL and create a download URL from it
+			thumbnailImage = element.getElementsByTagName("img")[0];
+			thumbnailLink = thumbnailImage.getAttribute("data-original");
+			downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
 
-		// Add a download link to the thumbnail
-		downloadDiv = document.createElement("div");
-		downloadDiv.className = "wbs_dl";
-		downloadAnchor = document.createElement("a");
-		downloadAnchor.href = downloadLink;
-		downloadAnchor.textContent = "Download";
-		downloadDiv.appendChild(downloadAnchor);
-		element.appendChild(downloadDiv);
+			// Add a download link to the thumbnail
+			downloadDiv = document.createElement("div");
+			downloadDiv.className = "wbs_dl";
+			downloadAnchor = document.createElement("a");
+			downloadAnchor.href = downloadLink;
+			downloadAnchor.textContent = "Download";
+			downloadDiv.appendChild(downloadAnchor);
+			element.appendChild(downloadDiv);
+		}
 	};
 
 	// Document load handler
