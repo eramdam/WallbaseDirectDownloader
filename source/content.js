@@ -1,18 +1,50 @@
-function addWallLink($el) {
-	var tLink = $el.find("img").attr('data-original');
-	var wallLink = tLink.replace(/thumb/g,"wallpaper");
-	$el.append('<div class="dl"><a href='+wallLink+'>Download</a></div>');
-}
+(function wallbaseDownloadFromSearch() {
+	var updating = false;
 
-$(document).ready(function() {
-	$('section#thumbs div.thumbnail > div.wrapper').each(function(index, el) {
-		addWallLink($(el));
-	});
-});
+	// Function to add a download link to a thumbnail element
+	var addDownloadLink = function addDownloadLink(element) {
+		var thumbnailImage,
+			thumbnailLink,
+			downloadLink,
+			downloadDiv,
+			downloadAnchor;
 
-$("section#thumbs").on("DOMNodeInserted", function(event) {
+		// Get the thumbnail URL and create a download URL from it
+		thumbnailImage = element.getElementsByTagName("img")[0];
+		thumbnailLink = thumbnailImage.getAttribute("data-original");
+		downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
 
-    if($(event.target).is("div.thumbnail")) {
-	    addWallLink($("> div.wrapper", event.target));
-    }
-});
+		// Add a download link to the thumbnail
+		downloadDiv = document.createElement("div");
+		downloadDiv.className = "dl";
+		downloadAnchor = document.createElement("a");
+		downloadAnchor.href = downloadLink;
+		downloadAnchor.textContent = "Download";
+		downloadDiv.appendChild(downloadAnchor);
+		element.appendChild(downloadDiv);
+	};
+
+	// Document load handler
+	var addDownloadLinks = function initDownloadLinks() {
+		var wrappers = document.getElementById("thumbs").getElementsByClassName("wrapper");
+		for (var i = 0, l = wrappers.length; i < l; i++) {
+			addDownloadLink(wrappers.item(i));
+		}
+		updating = false;
+	};
+
+	// Document update handler
+	var updateDownloadLinks = function updateDownloadLinks(event) {
+		if (event.target.classList && event.target.classList.contains("thumbnail")) {
+			if (!updating) {
+				updating = true;
+				addDownloadLinks();
+			}
+		}
+	};
+
+	// The thumbnail list will be updated on scroll
+	document.getElementById("thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
+
+	addDownloadLinks();
+}());

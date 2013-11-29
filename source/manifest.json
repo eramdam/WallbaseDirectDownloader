@@ -5,10 +5,10 @@
 	"description": "Allows you to download the wallpapers on Wallbase directly from the search pages",
 	"content_scripts": [{
 		"matches": ["http://wallbase.cc/search*","http://wallbase.cc/random*", "http://wallbase.cc/tags*", "http://wallbase.cc/toplist*"],
-		"js": ["jquery.js","content.js"],
+		"js": ["content.js"],
 		"css": ["wbs.css"]
 		}],
-	"web_accessible_resources": ["jquery-2.0.3.min.map", "bg-hover-top.png"],
+	"web_accessible_resources": ["bg-hover-top.png"],
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",
 	          "128": "icon128.png" }
