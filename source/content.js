@@ -16,7 +16,7 @@
 
 		// Add a download link to the thumbnail
 		downloadDiv = document.createElement("div");
-		downloadDiv.className = "dl";
+		downloadDiv.className = "wbs_dl";
 		downloadAnchor = document.createElement("a");
 		downloadAnchor.href = downloadLink;
 		downloadAnchor.textContent = "Download";

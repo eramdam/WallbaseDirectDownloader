@@ -1,5 +1,5 @@
 
-.dl {
+.wbs_dl {
 	position: absolute;
 	top: -30px;
 	width: 100%;
@@ -12,11 +12,11 @@
 	
 }
 
-.thumbnail:hover .dl {
+.thumbnail:hover .wbs_dl {
 	top: 0;
 }
 
-.dl a {
+.wbs_dl a {
 	color: white;
 	font-size: 1.4rem;
 	display: inline-block;
