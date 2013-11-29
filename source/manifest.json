@@ -1,8 +1,8 @@
 {
-	"name": "Wallbase Download from Search",
-	"version": "0.0.2",
+	"name": "Wallbase Direct Downloader",
+	"version": "0.0.3",
 	"manifest_version": 2,
-	"description": "Allows you to download the wallpapers on Wallbase directly from the search pages",
+	"description": "Allows you to download the wallpapers on Wallbase directly from the search/tag/random/toplist pages",
 	"content_scripts": [{
 		"matches": ["http://wallbase.cc/search*","http://wallbase.cc/random*", "http://wallbase.cc/tags*", "http://wallbase.cc/toplist*"],
 		"js": ["content.js"],
