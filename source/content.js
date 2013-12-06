@@ -2,7 +2,7 @@
 	var updating = false;
 
 	// Function to add a download link to a thumbnail element
-	var addDownloadLink = function addDownloadLink(element) {
+	function addDownloadLink(element) {
 		if(!element.getElementsByClassName("wbs_dl")[0]) {
 			var thumbnailImage,
 			thumbnailLink,
@@ -33,7 +33,7 @@
 	};
 
 	// Document load handler
-	var addDownloadLinks = function initDownloadLinks() {
+	function addDownloadLinks() {
 		var wrappers = document.getElementById("thumbs").getElementsByClassName("wrapper");
 		for (var i = 0, l = wrappers.length; i < l; i++) {
 			addDownloadLink(wrappers.item(i));
@@ -42,12 +42,10 @@
 	};
 
 	// Document update handler
-	var updateDownloadLinks = function updateDownloadLinks(event) {
-		if (event.target.classList && event.target.classList.contains("thumbnail")) {
-			if (!updating) {
-				updating = true;
-				addDownloadLinks();
-			}
+	function updateDownloadLinks(event) {
+		if (event.target.classList && event.target.classList.contains("thumbnail") && !updating) {
+			updating = true;
+			addDownloadLinks();
 		}
 	};
 
