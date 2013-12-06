@@ -20,7 +20,13 @@
 			downloadDiv.className = "wbs_dl";
 			downloadAnchor = document.createElement("a");
 			downloadAnchor.href = downloadLink;
-			downloadAnchor.textContent = "Download";
+			downloadAnchor.download = "";
+			downloadAnchor.classList.add("icon-download");
+			previewAnchor = document.createElement("a");
+			previewAnchor.href = downloadLink;
+			previewAnchor.target = "_blank";
+			previewAnchor.classList.add("icon-eye");
+			downloadDiv.appendChild(previewAnchor);
 			downloadDiv.appendChild(downloadAnchor);
 			element.appendChild(downloadDiv);
 		}
