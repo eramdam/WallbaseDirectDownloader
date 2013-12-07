@@ -13,7 +13,15 @@
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName("img")[0];
 			thumbnailLink = thumbnailImage.getAttribute("data-original");
-			downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
+			if(thumbnailLink.indexOf("orig") > -1) {
+				downloadLink = thumbnailLink.replace(/origthumb/g, "wallpaper");
+				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
+			} else if(thumbnailLink.indexOf("sthumb") > -1) {
+				downloadLink = thumbnailLink.replace(/sthumb/g, "wallpaper");
+				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
+			} else {
+				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
+			}
 
 			// Add a download link to the thumbnail
 			downloadDiv = document.createElement("div");
