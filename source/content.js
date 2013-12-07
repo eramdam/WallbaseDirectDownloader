@@ -20,8 +20,10 @@
 				downloadLink = thumbnailLink.replace(/sthumb/g, "wallpaper");
 				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
 			} else {
-				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
+				downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
 			}
+
+
 
 			// Add a download link to the thumbnail
 			downloadDiv = document.createElement("div");
