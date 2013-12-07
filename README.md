@@ -14,3 +14,15 @@ Just grab and install the extension from Chrome Web Store :
 Screenshot
 ==========================
 ![Screenshot](screen.png)
+
+
+Changelog
+==========================
+
+V0.0.5 : 
+- Added the support of the multiple thumbnails format of Wallbase and fixed the url accordingly
+
+V0.0.4 : 
+- Changed the "Download" link to 2 icons, then you can preview OR download the wallpaper directly !
+
+
