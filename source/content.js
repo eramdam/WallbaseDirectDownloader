@@ -8,7 +8,8 @@
 			thumbnailLink,
 			downloadLink,
 			downloadDiv,
-			downloadAnchor;
+			downloadAnchor,
+			previewAnchor;
 
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName("img")[0];
