@@ -13,6 +13,8 @@
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName("img")[0];
 			thumbnailLink = thumbnailImage.getAttribute("data-original");
+
+			// Checking the "format" of the thumbnail then adapting the downloadLink accordingly
 			if(thumbnailLink.indexOf("orig") > -1) {
 				downloadLink = thumbnailLink.replace(/origthumb/g, "wallpaper");
 				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
