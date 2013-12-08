@@ -1,6 +1,17 @@
 (function wallbaseDownloadFromSearch() {
 	var updating = false;
 
+	function urlCheck(url, callback){
+	    var request = new XMLHttpRequest;
+	    request.open('HEAD', url, true);
+	    request.send();
+	    request.onreadystatechange = function(){
+	        if(request.readyState==4){
+	            callback(request)
+	        }
+	    }
+	};
+
 	// Function to add a download link to a thumbnail element
 	function addDownloadLink(element) {
 		if(!element.getElementsByClassName("wbs_dl")[0]) {
@@ -26,11 +37,9 @@
 				downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
 			}
 
-
-
-			// Add a download link to the thumbnail
 			downloadDiv = document.createElement("div");
 			downloadDiv.className = "wbs_dl";
+			downloadDiv.classList.add("wbs_unsafe");
 			downloadAnchor = document.createElement("a");
 			downloadAnchor.href = downloadLink;
 			downloadAnchor.download = "";
@@ -43,13 +52,30 @@
 			downloadDiv.appendChild(downloadAnchor);
 			element.appendChild(downloadDiv);
 		}
-	};
+	};	
+
+	function fixLinks() {
+		toFix = document.getElementsByClassName("wbs_unsafe");
+		for (var i = 0; i < toFix.length; i++) {
+			var link = toFix[i];
+			urlCheck(link.querySelector("a").href, function(request) {
+				if(request.status===404) {
+					linkFixed = link.querySelector("a").href.replace(/jpg$/,"png");
+					link.querySelectorAll('a[class^="icon-"]')[0].href = linkFixed;
+					link.querySelectorAll('a[class^="icon-"]')[1].href = linkFixed;
+				}
+			});
+			link.classList.remove("wbs_unsafe");
+			
+		};
+	}
 
 	// Document load handler
 	function addDownloadLinks() {
 		var wrappers = document.getElementById("thumbs").getElementsByClassName("wrapper");
 		for (var i = 0, l = wrappers.length; i < l; i++) {
 			addDownloadLink(wrappers.item(i));
+			fixLinks();
 		}
 		updating = false;
 	};
@@ -66,4 +92,6 @@
 	document.getElementById("thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
 
 	addDownloadLinks();
+	fixLinks();
+
 }());
