@@ -24,7 +24,11 @@
 
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName("img")[0];
-			thumbnailLink = thumbnailImage.getAttribute("src");
+			
+			if(!element.getElementsByTagName("img")[0].getAttribute("data-original"))
+				thumbnailLink = thumbnailImage.getAttribute("src");
+			else
+				thumbnailLink = thumbnailImage.getAttribute("data-original");
 
 			// Checking the "format" of the thumbnail then adapting the downloadLink accordingly
 			if(thumbnailLink.indexOf("orig") > -1) {
