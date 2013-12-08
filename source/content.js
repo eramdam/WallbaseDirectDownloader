@@ -37,6 +37,9 @@
 				downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
 			}
 
+			// Removing the double slash in URLs
+			downloadLink = downloadLink.replace(/cc\//,"cc");
+
 			downloadDiv = document.createElement("div");
 			downloadDiv.className = "wbs_dl";
 			downloadDiv.classList.add("wbs_unsafe");
