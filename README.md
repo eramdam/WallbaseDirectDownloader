@@ -19,6 +19,15 @@ Screenshot
 Changelog
 ==========================
 
+V0.0.6.2
+- Now the extension works if you disable the lazy-loading in Wallbase's preferences.
+
+V0.0.6
+- The extension is now handling correctly wallpapers in PNG format thanks to super-awesome XMLHttpRequests ! Yay for technology !
+
+V0.0.5.1
+- Fixed a bug introduced by the multiple thumbnail sizes feature
+
 V0.0.5 : 
 - Added the support of the multiple thumbnails format of Wallbase and fixed the url accordingly
 
