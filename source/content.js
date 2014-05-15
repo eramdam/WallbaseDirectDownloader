@@ -45,15 +45,14 @@
 			downloadLink = downloadLink.replace(/cc\//,"cc");
 
 			downloadDiv = document.createElement("div");
-			downloadDiv.className = "wbs_dl";
-			downloadDiv.classList.add("wbs_unsafe");
+			downloadDiv.className = "wbs_dl wbs_unsafe";
 			downloadAnchor = document.createElement("a");
-			downloadAnchor.href = downloadLink;
-			downloadAnchor.download = "";
+			downloadAnchor.setAttribute("href",downloadLink);
+			downloadAnchor.setAttribute("download","");
 			downloadAnchor.classList.add("icon-download");
 			previewAnchor = document.createElement("a");
-			previewAnchor.href = downloadLink;
-			previewAnchor.target = "_blank";
+			previewAnchor.setAttribute("href",downloadLink);
+			previewAnchor.setAttribute("target","_blank");
 			previewAnchor.classList.add("icon-eye");
 			downloadDiv.appendChild(previewAnchor);
 			downloadDiv.appendChild(downloadAnchor);
@@ -68,8 +67,8 @@
 			urlCheck(link.querySelector("a").href, function(request) {
 				if(request.status===404) {
 					linkFixed = link.querySelector("a").href.replace(/jpg$/,"png");
-					link.querySelectorAll('a[class^="icon-"]')[0].href = linkFixed;
-					link.querySelectorAll('a[class^="icon-"]')[1].href = linkFixed;
+					link.querySelectorAll('a[class^="icon-"]')[0].setAttribute("href", linkFixed);
+					link.querySelectorAll('a[class^="icon-"]')[1].setAttribute("href", linkFixed);
 				}
 			});
 			link.classList.remove("wbs_unsafe");
