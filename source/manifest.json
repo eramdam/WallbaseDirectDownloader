@@ -1,6 +1,6 @@
 {
 	"name": "Wallbase Direct Downloader",
-	"version": "0.0.6.2",
+	"version": "0.0.7",
 	"manifest_version": 2,
 	"description": "Allows you to download the wallpapers on Wallbase directly from the search/tag/random/toplist pages",
 	"content_scripts": [
