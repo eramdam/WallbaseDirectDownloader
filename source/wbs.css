@@ -53,3 +53,11 @@
 .thumbnail .closeX, .thumbnail .spr-bg-favs {
 	z-index:999;
 }
+
+.leftbar .favsrow.wbs-down .icon.icon-download {
+	width: auto;
+	height: auto;
+	margin-top: -6px;
+	margin-left: -4px;
+	color: #4CA469;
+}

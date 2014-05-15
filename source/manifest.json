@@ -3,11 +3,18 @@
 	"version": "0.0.6.2",
 	"manifest_version": 2,
 	"description": "Allows you to download the wallpapers on Wallbase directly from the search/tag/random/toplist pages",
-	"content_scripts": [{
+	"content_scripts": [
+		{
 		"matches": ["http://wallbase.cc/search*","http://wallbase.cc/random*", "http://wallbase.cc/tags*", "http://wallbase.cc/toplist*"],
 		"js": ["content.js"],
 		"css": ["wbs.css"]
-		}],
+		},
+		{
+		"matches": ["http://wallbase.cc/wallpaper*"],
+		"js": ["wall-page.js"],
+		"css": ["wbs.css"]
+		}
+	],
 	"web_accessible_resources": ["bg-hover-top.png","wbs-.svg"],
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",
