@@ -25,8 +25,8 @@ Better TweetDeck has been proven to work on Opera using the [Download Chrome Ext
 Screenshot
 ==========================
 
-![Screenshot]("screen.png")
-![Screenshot]("1-click.jpg")
+![Screenshot](screen.png)
+![Screenshot](1-click.jpg)
 
 
 Changelog
