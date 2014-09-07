@@ -1,4 +1,4 @@
-WallbaseDownloadFromSearch
+Wallbase Direct Downloader
 ==========================
 
 A Chrome extension to download Wallbase's wallpapers straight from the search page !
@@ -11,10 +11,22 @@ Install
 Just grab and install the extension from Chrome Web Store :
 [https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf](https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf)
 
+# Installation (Opera)
+
+Better TweetDeck has been proven to work on Opera using the [Download Chrome Extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/?display=en) add-on. Follow those steps to install Better TweetDeck on Opera :
+
+1. Download "[Download Chrome Extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/?display=en)"
+2. Get [Wallbase Direct Downloader on the Chrome Web Store](https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf)
+3. Install it like you would on Chrome
+4. Confirm the installation because Opera will freak out about the origin of the extension
+5. ???
+6. PROFIT !!! :tada: 
+
 Screenshot
 ==========================
-![Screenshot](screen.png)
-![Screenshot](1-click.jpg)
+
+![Screenshot]("screen.png")
+![Screenshot]("1-click.jpg")
 
 
 Changelog
