@@ -68,7 +68,7 @@
 
 	// Document load handler
 	function addDownloadLinks() {
-		var wrappers = document.getElementById("thumbs").querySelectorAll('li figure.thumb');
+		var wrappers = document.querySelector("#thumbs, #tag-thumbs").querySelectorAll('li figure.thumb');
 		for (var i = 0, l = wrappers.length; i < l; i++) {
 			addDownloadLink(wrappers.item(i));
 			fixLinks();
@@ -101,8 +101,8 @@
 	}
 
 	// The thumbnail list will be updated on scroll
-	if (document.getElementById("thumbs")) {
-		document.getElementById("thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
+	if (document.querySelector("#thumbs, #tag-thumbs")) {
+		document.querySelector("#thumbs, #tag-thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
 		addDownloadLinks();
 		fixLinks();
 	} else if (document.getElementById("showcase-sidebar")) {
