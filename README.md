@@ -32,6 +32,9 @@ Screenshot
 Changelog
 ==========================
 
+1.0.1
+- Fixed bugs
+
 1.0.0
 - Revamped the code to work with Wallhaven
 - New icon
