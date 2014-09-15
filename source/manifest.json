@@ -5,13 +5,8 @@
 	"description": "Allows you to download the wallpapers on Wallbase directly from the search/tag/random/toplist pages",
 	"content_scripts": [
 		{
-		"matches": ["http://wallbase.cc/search*","http://wallbase.cc/random*", "http://wallbase.cc/tags*", "http://wallbase.cc/toplist*"],
+		"matches": ["http://alpha.wallhaven.cc/wallpaper/*"],
 		"js": ["content.js"],
-		"css": ["wbs.css"]
-		},
-		{
-		"matches": ["http://wallbase.cc/wallpaper*"],
-		"js": ["wall-page.js"],
 		"css": ["wbs.css"]
 		}
 	],
@@ -19,5 +14,5 @@
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",
 	          "128": "icon128.png" },
-	"permissions": ["http://wallpapers.wallbase.cc/*"]
+	"permissions": ["http://alpha.wallhaven.cc/*"]
 }
