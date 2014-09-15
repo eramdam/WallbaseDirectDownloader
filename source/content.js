@@ -78,7 +78,7 @@
 
 	// Document update handler
 	function updateDownloadLinks(event) {
-		if (event.target.classList && event.target.classList.contains("thumb") && !updating) {
+		if (event.relatedNode.querySelectorAll('.thumb') && !updating) {
 			updating = true;
 			addDownloadLinks();
 		}
