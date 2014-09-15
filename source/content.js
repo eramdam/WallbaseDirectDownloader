@@ -78,7 +78,6 @@
 
 	// Document update handler
 	function updateDownloadLinks(event) {
-		console.log("Hello");
 		if (event.target.classList && event.target.classList.contains("thumb") && !updating) {
 			updating = true;
 			addDownloadLinks();
