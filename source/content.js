@@ -1,3 +1,4 @@
+
 (function wallbaseDownloadFromSearch() {
 	var updating = false;
 
@@ -25,24 +26,13 @@
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName("img")[0];
 			
-			if(!element.getElementsByTagName("img")[0].getAttribute("data-original"))
+			if(!element.getElementsByTagName("img")[0].getAttribute("data-src"))
 				thumbnailLink = thumbnailImage.getAttribute("src");
 			else
-				thumbnailLink = thumbnailImage.getAttribute("data-original");
+				thumbnailLink = thumbnailImage.getAttribute("data-src");
 
-			// Checking the "format" of the thumbnail then adapting the downloadLink accordingly
-			if(thumbnailLink.indexOf("orig") > -1) {
-				downloadLink = thumbnailLink.replace(/origthumb/g, "wallpaper");
-				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
-			} else if(thumbnailLink.indexOf("sthumb") > -1) {
-				downloadLink = thumbnailLink.replace(/sthumb/g, "wallpaper");
-				downloadLink = downloadLink.replace(/thumb/g, "wallpaper");
-			} else {
-				downloadLink = thumbnailLink.replace(/thumb/g, "wallpaper");
-			}
 
-			// Removing the double slash in URLs
-			downloadLink = downloadLink.replace(/cc\//,"cc");
+			downloadLink = thumbnailLink.replace(/\/thumb\/[a-z]+\/th-/g,"/full/wallhaven-");
 
 			downloadDiv = document.createElement("div");
 			downloadDiv.className = "wbs_dl wbs_unsafe";
@@ -78,7 +68,7 @@
 
 	// Document load handler
 	function addDownloadLinks() {
-		var wrappers = document.getElementById("thumbs").getElementsByClassName("wrapper");
+		var wrappers = document.getElementById("thumbs").querySelectorAll('li figure.thumb');
 		for (var i = 0, l = wrappers.length; i < l; i++) {
 			addDownloadLink(wrappers.item(i));
 			fixLinks();
@@ -88,16 +78,36 @@
 
 	// Document update handler
 	function updateDownloadLinks(event) {
-		if (event.target.classList && event.target.classList.contains("thumbnail") && !updating) {
+		console.log("Hello");
+		if (event.target.classList && event.target.classList.contains("thumb") && !updating) {
 			updating = true;
 			addDownloadLinks();
 		}
 	};
 
-	// The thumbnail list will be updated on scroll
-	document.getElementById("thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
+	function addDownloadLinksOnWallpapersPage() {
+		var wallpaperLink = document.getElementById("wallpaper").getAttribute("src");
+		var downloadButton = document.createElement("div");
+		downloadButton.className = "button";
+		downloadButton.id = "wbs-dl-button";
 
-	addDownloadLinks();
-	fixLinks();
+		var downloadLink = document.createElement("a");
+		downloadLink.setAttribute("href", wallpaperLink);
+		downloadLink.setAttribute("download","");
+		downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> 1-click download this wallpaper');
+		downloadButton.appendChild(downloadLink);
+
+		document.getElementById("fav-add-button").insertAdjacentHTML("afterend", downloadButton.outerHTML);
+	}
+
+	// The thumbnail list will be updated on scroll
+	if (document.getElementById("thumbs")) {
+		document.getElementById("thumbs").addEventListener("DOMNodeInserted", updateDownloadLinks);
+		addDownloadLinks();
+		fixLinks();
+	} else if (document.getElementById("showcase-sidebar")) {
+		addDownloadLinksOnWallpapersPage();
+	}
 
 }());
+

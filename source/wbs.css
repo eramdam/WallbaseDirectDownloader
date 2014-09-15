@@ -27,31 +27,36 @@
 
 .wbs_dl {
 	position: absolute;
-	top: -30px;
+	top: 0;
 	width: 100%;
-	background-image: url("chrome-extension://__MSG_@@extension_id__/bg-hover-top.png");
-	background-repeat: repeat-x;
-	z-index: 0;
-	height: 30px;
-	-webkit-transition: top .1s ease-in;
-	transition: top .1s ease-in;
-	
+	z-index: 200;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+	overflow: hidden;
+	visibility: hidden;
+	background-color: rgba(0,0,0,0.1);
+	box-shadow: inset 0 2em 2em -2em #000;
 }
 
-.thumbnail:hover .wbs_dl {
-	top: 0;
+.thumb:hover .wbs_dl {
+	height: 30px;
+	opacity: 1;
+	visibility: visible;
 }
 
 .wbs_dl a {
 	color: white;
-	font-size: 2rem;
+	font-size: 18px;
 	display: inline-block;
-	margin-top: 10px;
-	text-shadow: #000 1px 1px 0;
+	margin-top: 4px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
 }
 
-.thumbnail .closeX, .thumbnail .spr-bg-favs {
-	z-index:999;
+#wbs-dl-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .leftbar .favsrow.wbs-down .icon.icon-download {
