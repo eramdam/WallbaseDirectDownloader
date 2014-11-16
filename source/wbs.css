@@ -1,12 +1,25 @@
 @font-face {
-  font-family: 'wbs-';
-  src: url('chrome-extension://__MSG_@@extension_id__/wbs-.svg?76014930#wbs-') format('svg');
+  font-family: 'wallbase';
+  src: url('chrome-extension://__MSG_@@extension_id__/wallbase.eot?1004535');
+  src: url('chrome-extension://__MSG_@@extension_id__/wallbase.eot?1004535#iefix') format('embedded-opentype'),
+       url('chrome-extension://__MSG_@@extension_id__/wallbase.woff?1004535') format('woff'),
+       url('chrome-extension://__MSG_@@extension_id__/wallbase.ttf?1004535') format('truetype'),
+       url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/**/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'wallbase';
+    src: url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
+  }
+}
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "wbs-";
+  font-family: "wallbase";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -22,8 +35,8 @@
   margin-left: .2em;
 }
  
-.icon-eye:before { content: '\e800'; } /* '' */
-.icon-download:before { content: '\e801'; } /* '' */
+.icon-download:before { content: '\e800'; } /* '' */
+.icon-eye:before { content: '\e801'; } /* '' */
 
 .wbs_dl {
 	position: absolute;
@@ -38,6 +51,10 @@
 	visibility: hidden;
 	background-color: rgba(0,0,0,0.1);
 	box-shadow: inset 0 2em 2em -2em #000;
+}
+
+#wbs-dl-button {
+  margin-top: 1.4em;
 }
 
 img[src*="orig"] ~ .wbs_dl {
@@ -58,12 +75,12 @@ img[src*="orig"] ~ .wbs_dl {
 	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
 }
 
-#wbs-dl-button {
+#wbsdl-button {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-.leftbar .favsrow.wbs-down .icon.icon-download {
+.leftbar .favsrow.wbsdown .icon.icon-download {
 	width: auto;
 	height: auto;
 	margin-top: -6px;

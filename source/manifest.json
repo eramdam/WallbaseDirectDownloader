@@ -1,16 +1,16 @@
 {
 	"name": "Wallhaven Direct Downloader",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"manifest_version": 2,
 	"description": "Allows you to download the wallpapers on Wallhaven directly from the search/tag/random/toplist pages",
 	"content_scripts": [
 		{
-		"matches": ["http://alpha.wallhaven.cc/wallpaper/*", "http://alpha.wallhaven.cc/tag/*"],
+		"matches": ["http://alpha.wallhaven.cc/wallpaper/*", "http://alpha.wallhaven.cc/tag/*", "http://alpha.wallhaven.cc/*"],
 		"js": ["content.js"],
 		"css": ["wbs.css"]
 		}
 	],
-	"web_accessible_resources": ["wbs-.svg"],
+	"web_accessible_resources": ["wallbase.eot", "wallbase.ttf", "wallbase.svg", "wallbase.woff"],
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",
 	          "128": "icon128.png" },
