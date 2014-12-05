@@ -59,8 +59,8 @@
 			urlCheck(link.querySelector('a').href, function(request) {
 				if(request.status===404) {
 					linkFixed = link.querySelector('a').href.replace(/jpg$/,'png');
-					link.querySelectorAll('a[class^='icon-']')[0].setAttribute('href', linkFixed);
-					link.querySelectorAll('a[class^='icon-']')[1].setAttribute('href', linkFixed);
+					link.querySelectorAll('a[class^="icon-"]')[0].setAttribute('href', linkFixed);
+					link.querySelectorAll('a[class^="icon-"]')[1].setAttribute('href', linkFixed);
 				}
 			});
 			link.classList.remove('wbs_unsafe');
@@ -95,7 +95,7 @@
 		var downloadLink = document.createElement('a');
 		downloadLink.setAttribute('href', wallpaperLink);
 		downloadLink.setAttribute('download','');
-		downloadLink.insertAdjacentHTML('afterbegin', '<i class='icon icon-download'></i> Download this wallpaper');
+		downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download this wallpaper');
 		downloadButton.appendChild(downloadLink);
 
 		document.getElementById('fav-add-button').insertAdjacentHTML('afterend', downloadButton.outerHTML);
