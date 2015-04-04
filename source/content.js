@@ -98,7 +98,7 @@
 		downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download this wallpaper');
 		downloadButton.appendChild(downloadLink);
 
-		document.getElementById('fav-add-button').insertAdjacentHTML('afterend', downloadButton.outerHTML);
+		document.getElementById('fav-button').insertAdjacentHTML('afterend', downloadButton.outerHTML);
 	}
 
 	// The thumbnail list will be updated on scroll

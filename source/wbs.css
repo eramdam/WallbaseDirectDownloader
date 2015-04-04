@@ -54,7 +54,12 @@
 }
 
 #wbs-dl-button {
-  margin-top: 1.4em;
+  margin: .5em .25em;
+  margin-bottom: 1.5em;
+}
+
+#fav-button.add-button {
+  margin-bottom: 1em;
 }
 
 img[src*="orig"] ~ .wbs_dl {
