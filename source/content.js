@@ -25,7 +25,7 @@
 
 			// Get the thumbnail URL and create a download URL from it
 			thumbnailImage = element.getElementsByTagName('img')[0];
-			
+
 			if(!element.getElementsByTagName('img')[0].getAttribute('data-src'))
 				thumbnailLink = thumbnailImage.getAttribute('src');
 			else
@@ -50,7 +50,7 @@
 			downloadDiv.appendChild(downloadAnchor);
 			element.appendChild(downloadDiv);
 		}
-	};	
+	};
 
 	function fixLinks() {
 		toFix = document.getElementsByClassName('wbs_unsafe');
@@ -64,7 +64,7 @@
 				}
 			});
 			link.classList.remove('wbs_unsafe');
-			
+
 		};
 	}
 
@@ -91,6 +91,7 @@
 		var downloadButton = document.createElement('div');
 		downloadButton.className = 'button';
 		downloadButton.id = 'wbs-dl-button';
+		downloadButton.setAttribute('style', 'display:table;margin:0.5em auto 1.5em;');
 
 		var downloadLink = document.createElement('a');
 		downloadLink.setAttribute('href', wallpaperLink);
@@ -98,7 +99,7 @@
 		downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download this wallpaper');
 		downloadButton.appendChild(downloadLink);
 
-		document.getElementById('fav-button').insertAdjacentHTML('afterend', downloadButton.outerHTML);
+		document.getElementById('wallpaper-purity-form').insertAdjacentHTML('afterend', downloadButton.outerHTML);
 	}
 
 	// The thumbnail list will be updated on scroll
