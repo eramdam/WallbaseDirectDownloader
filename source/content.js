@@ -99,15 +99,14 @@
         var downloadButton = document.createElement('div');
         downloadButton.className = 'button';
         downloadButton.id = 'wbs-dl-button';
-        downloadButton.setAttribute('style', 'display:table;margin:0.5em auto 1.5em;');
 
         var downloadLink = document.createElement('a');
         downloadLink.setAttribute('href', wallpaperLink);
         downloadLink.setAttribute('download', '');
-        downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download this wallpaper');
+        downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download');
         downloadButton.appendChild(downloadLink);
 
-        document.getElementById('wallpaper-purity-form').insertAdjacentHTML('afterend', downloadButton.outerHTML);
+        document.getElementById('userpanel').innerHTML = downloadButton.outerHTML + document.getElementById('userpanel').innerHTML;
     }
 
     // The thumbnail list will be updated on scroll
