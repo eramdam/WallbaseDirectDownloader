@@ -17,13 +17,13 @@
     src: url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
   }
 }
- 
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "wallbase";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -34,7 +34,7 @@
   line-height: 1em;
   margin-left: .2em;
 }
- 
+
 .icon-download:before { content: '\e800'; } /* '' */
 .icon-eye:before { content: '\e801'; } /* '' */
 
@@ -42,7 +42,7 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: 200;
+	z-index: 139;
 	height: 0;
 	opacity: 0;
 	-webkit-transition: all .25s;
