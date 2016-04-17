@@ -5,7 +5,7 @@
 	"description": "Allows you to download the wallpapers on Wallhaven directly from the search/tag/random/toplist pages",
 	"content_scripts": [
 		{
-		"matches": ["http://alpha.wallhaven.cc/wallpaper/*", "http://alpha.wallhaven.cc/tag/*", "http://alpha.wallhaven.cc/*"],
+		"matches": ["*://alpha.wallhaven.cc/wallpaper/*", "*://alpha.wallhaven.cc/tag/*", "*://alpha.wallhaven.cc/*"],
 		"js": ["content.js"],
 		"css": ["wbs.css"]
 		}
@@ -14,5 +14,5 @@
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",
 	          "128": "icon128.png" },
-	"permissions": ["http://alpha.wallhaven.cc/*"]
+	"permissions": ["*://alpha.wallhaven.cc/*"]
 }
