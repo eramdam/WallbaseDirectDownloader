@@ -1,25 +1,38 @@
+:root {
+  --iconFontFamily: 'wallbase';
+}
+
 @font-face {
   font-family: 'wallbase';
   src: url('chrome-extension://__MSG_@@extension_id__/wallbase.eot?1004535');
   src: url('chrome-extension://__MSG_@@extension_id__/wallbase.eot?1004535#iefix') format('embedded-opentype'),
-       url('chrome-extension://__MSG_@@extension_id__/wallbase.woff?1004535') format('woff'),
-       url('chrome-extension://__MSG_@@extension_id__/wallbase.ttf?1004535') format('truetype'),
-       url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
+    url('chrome-extension://__MSG_@@extension_id__/wallbase.woff?1004535') format('woff'),
+    url('chrome-extension://__MSG_@@extension_id__/wallbase.ttf?1004535') format('truetype'),
+    url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/**/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'wallbase';
-    src: url('chrome-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
+
+@font-face {
+  font-family: 'wallbase-firefox';
+  src: url('moz-extension://__MSG_@@extension_id__/wallbase.eot?1004535');
+  src: url('moz-extension://__MSG_@@extension_id__/wallbase.eot?1004535#iefix') format('embedded-opentype'),
+    url('moz-extension://__MSG_@@extension_id__/wallbase.woff?1004535') format('woff'),
+    url('moz-extension://__MSG_@@extension_id__/wallbase.ttf?1004535') format('truetype'),
+    url('moz-extension://__MSG_@@extension_id__/wallbase.svg?1004535#wallbase') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@supports(-moz-appearance: none) {
+  :root {
+    --iconFontFamily: 'wallbase-firefox';
   }
 }
 
- [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "wallbase";
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: var(--iconFontFamily);
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -35,22 +48,30 @@
   margin-left: .2em;
 }
 
-.icon-download:before { content: '\e800'; } /* '' */
-.icon-eye:before { content: '\e801'; } /* '' */
+.icon-download:before {
+  content: '\e800';
+}
+
+/* '' */
+.icon-eye:before {
+  content: '\e801';
+}
+
+/* '' */
 
 .wbs_dl {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 139;
-	height: 0;
-	opacity: 0;
-	-webkit-transition: all .25s;
-	transition: all .25s;
-	overflow: hidden;
-	visibility: hidden;
-	background-color: rgba(0,0,0,0.1);
-	box-shadow: inset 0 2em 2em -2em #000;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 139;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2em 2em -2em #000;
 }
 
 #wbs-dl-button {
@@ -62,33 +83,33 @@
   margin-bottom: 1em;
 }
 
-img[src*="orig"] ~ .wbs_dl {
-	top: -1px;
+img[src*="orig"]~.wbs_dl {
+  top: -1px;
 }
 
 .thumb:hover .wbs_dl {
-	height: 30px;
-	opacity: 1;
-	visibility: visible;
+  height: 30px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .wbs_dl a {
-	color: white;
-	font-size: 18px;
-	display: inline-block;
-	margin-top: 4px;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 4px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
 }
 
 #wbsdl-button {
-	margin-top: 20px;
-	margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .leftbar .favsrow.wbsdown .icon.icon-download {
-	width: auto;
-	height: auto;
-	margin-top: -6px;
-	margin-left: -4px;
-	color: #4CA469;
+  width: auto;
+  height: auto;
+  margin-top: -6px;
+  margin-left: -4px;
+  color: #4CA469;
 }
