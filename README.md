@@ -1,15 +1,21 @@
 Wallhaven Direct Downloader
 ==========================
 
-A Chrome extension to download Wallhaven's wallpapers straight from the search page !
+A Chrome/Firefox extension to download Wallhaven's wallpapers straight from the search page !
 
 This extension adds a direct download link to thumbnails, simply hover over a thumbnail to see it.
 
-Install
+Install (Chrome)
 ==========================
 
-Just grab and install the extension from Chrome Web Store :
+Just grab and install the extension from Chrome Web Store:
 [https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf](https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf)
+
+Install (Firefox)
+==========================
+
+Just grab and install the extension from Firefox Add-ons listing:
+[https://addons.mozilla.org/en-US/firefox/addon/wallhaven-downloader/](https://addons.mozilla.org/en-US/firefox/addon/wallhaven-downloader/)
 
 # Installation (Opera)
 
@@ -22,7 +28,7 @@ Better TweetDeck has been proven to work on Opera using the [Download Chrome Ext
 5. ???
 6. PROFIT !!! :tada: 
 
-Screenshot
+Screenshots
 ==========================
 
 ![Screenshot](screen.jpg)
@@ -31,6 +37,9 @@ Screenshot
 
 Changelog
 ==========================
+
+1.1.0
+- Updated/fixed the extension for Wallhaven now that it's out of alpha
 
 1.0.1
 - Fixed bugs
