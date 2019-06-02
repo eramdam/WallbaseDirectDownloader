@@ -32,7 +32,7 @@
 				thumbnailLink = thumbnailImage.getAttribute('data-src');
 
 
-			downloadLink = thumbnailLink.replace(/\/thumb\/[a-z]+\/th-/g,'/full/wallhaven-');
+			downloadLink = thumbnailLink.replace(/\/small\/([0-9a-z]+)\//i,'/full/$1/wallhaven-').replace('th.wallhaven','w.wallhaven')
 
 			downloadDiv = document.createElement('div');
 			downloadDiv.className = 'wbs_dl wbs_unsafe';
