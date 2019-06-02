@@ -38,15 +38,10 @@
 			downloadDiv.className = 'wbs_dl wbs_unsafe';
 			downloadAnchor = document.createElement('a');
 			downloadAnchor.setAttribute('alt', 'Download');
+			downloadAnchor.setAttribute('target', '_blank');
 			downloadAnchor.setAttribute('href',downloadLink);
 			downloadAnchor.setAttribute('download','');
 			downloadAnchor.classList.add('icon-download');
-			previewAnchor = document.createElement('a');
-			previewAnchor.setAttribute('alt', 'Open in new tab');
-			previewAnchor.setAttribute('href',downloadLink);
-			previewAnchor.setAttribute('target','_blank');
-			previewAnchor.classList.add('icon-eye');
-			downloadDiv.appendChild(previewAnchor);
 			downloadDiv.appendChild(downloadAnchor);
 			element.appendChild(downloadDiv);
 		}
@@ -60,7 +55,6 @@
 				if(request.status===404) {
 					linkFixed = link.querySelector('a').href.replace(/jpg$/,'png');
 					link.querySelectorAll('a[class^="icon-"]')[0].setAttribute('href', linkFixed);
-					link.querySelectorAll('a[class^="icon-"]')[1].setAttribute('href', linkFixed);
 				}
 			});
 			link.classList.remove('wbs_unsafe');
