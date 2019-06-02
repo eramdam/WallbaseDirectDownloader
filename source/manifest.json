@@ -1,6 +1,6 @@
 {
 	"name": "Wallhaven Direct Downloader",
-	"version": "1.0.5",
+	"version": "1.1.0",
 	"manifest_version": 2,
 	"description": "Allows you to download the wallpapers on Wallhaven directly from the search/tag/random/toplist pages",
 	"content_scripts": [{
