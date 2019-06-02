@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "start": "webpack -w",
-    "pack": "cross-zip dist artifacts/build-$npm_package_version.zip",
+    "pack": "node pack.js",
     "clean": "rimraf dist artifacts/*",
     "release": "npm run clean && npm run build && npm run pack"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/eramdam/WallbaseDirectDownloader#readme",
   "dependencies": {
+    "bestzip": "^2.1.4",
     "copy-webpack-plugin": "^5.0.3",
     "cross-zip-cli": "^1.0.0",
     "file-saver": "^2.0.2",
