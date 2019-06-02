@@ -38,6 +38,11 @@ Screenshots
 Changelog
 ==========================
 
+1.2.0:
+- Rewrote the code from scratch
+- Restores the download functionality
+- Fixes some bugs, should improve reliability/performances as well
+
 1.1.0
 - Updated/fixed the extension for Wallhaven now that it's out of alpha
 
