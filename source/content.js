@@ -94,11 +94,11 @@
 
 		var downloadLink = document.createElement('a');
 		downloadLink.setAttribute('href', wallpaperLink);
-		downloadLink.setAttribute('download','');
+		downloadLink.setAttribute('target', '_blank');
 		downloadLink.insertAdjacentHTML('afterbegin', '<i class="icon icon-download"></i> Download this wallpaper');
 		downloadButton.appendChild(downloadLink);
 
-		document.getElementById('fav-button').insertAdjacentHTML('afterend', downloadButton.outerHTML);
+		document.querySelector('.sidebar-section[data-storage-id="showcase-tools"] .showcase-tools').insertAdjacentHTML('beforebegin', downloadButton.outerHTML);
 	}
 
 	// The thumbnail list will be updated on scroll
