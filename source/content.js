@@ -1,21 +1,4 @@
 import {saveAs} from 'file-saver';
-function urlCheck(url) {
-  return fetch(url, {
-    method: 'HEAD'
-  });
-}
-
-async function maybeGetFixedUrl(url) {
-  // Perform a HEAD request.
-  const res = await urlCheck(url);
-  // If no error, return the OG url.
-  if (res.status === 200) {
-    return url;
-  }
-
-  // If not, return the PNG one.
-  return url.replace(/jpg$/, 'png');
-}
 
 function addDownloadLinksToThumbnails() {
   // Grab our thumbnails.
@@ -52,8 +35,9 @@ async function addDownloadLinksToThumbnail(element) {
     .replace(/\/small\/([0-9a-z]+)\//i, '/full/$1/wallhaven-')
     .replace('th.wallhaven', 'w.wallhaven');
 
-  // We do a request to see if we fix the URL or not.
-  const fixedDownloadLink = await maybeGetFixedUrl(downloadLink);
+  const isPng = Boolean(element.querySelector('.png'));
+
+  const fixedDownloadLink = isPng ? downloadLink.replace('.jpg', '.png') : downloadLink;
 
   // Create our download and preview links.
   const downloadDiv = document.createElement('div');
