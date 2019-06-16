@@ -1,5 +1,19 @@
 import {saveAs} from 'file-saver';
 
+async function getMarkAsSeenSetting() {
+  // It's not like Wallhaven has an API or anything so our best bet here is to just crawl the settings page like it's 2003 or something.
+  const dom = new DOMParser();
+  const html = await fetch('https://wallhaven.cc/settings/browsing').then(res => res.text());
+  const settingsPage = dom.parseFromString(html, 'text/html');
+  const input = settingsPage.querySelector('[name="mark_seen_wallpapers"]');
+
+  if (!input) return false;
+
+  return Boolean(input.checked);
+}
+
+let shouldMarkAsSeen = false;
+
 function addDownloadLinksToThumbnails() {
   // Grab our thumbnails.
   const wrappers = document
@@ -15,22 +29,28 @@ function addDownloadLinksToThumbnails() {
 const WallhavenSennWallpapersStorageKey = 'wallhaven.seen-wallpapers';
 
 function markWallpaperAsSeen(downloadLink) {
+  if (!shouldMarkAsSeen) {
+    return;
+  }
+
+  // Grab the wallpaper id from the download link
   const [, wallpaperId] = String(downloadLink).match(/wallhaven-([^\.]+)./);
-  const seenWallpapersRaw = localStorage.getItem(WallhavenSennWallpapersStorageKey);
+  // Grab the already seen wallpapers from localStorage, default to an empty array if there are none
+  const seenWallpapersRaw = localStorage.getItem(WallhavenSennWallpapersStorageKey) || '[]';
 
   try {
     const seenWallpapersArray = Array.from(JSON.parse(seenWallpapersRaw));
+    // Add the new id to the array.
     seenWallpapersArray.push(wallpaperId);
 
+    // Write the array to localStorage.
     localStorage.setItem(WallhavenSennWallpapersStorageKey, JSON.stringify(seenWallpapersArray));
 
+    // Update the UI.
     const thumbnailNode = document.querySelector(`.thumb[data-wallpaper-id="${wallpaperId}"]`);
-
-    if (!thumbnailNode) {
-      return;
+    if (thumbnailNode) {
+      thumbnailNode.classList.add('thumb-seen');
     }
-
-    thumbnailNode.classList.add('thumb-seen');
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);
@@ -134,6 +154,11 @@ function addDownloadLinkOnWallpaperPage() {
 
 // Hacky way to wait for everything to be ready
 setTimeout(() => {
+  // Fetch the mark as seen setting once so we don't need to, like, fetch it a million times over a single session.
+  getMarkAsSeenSetting().then(result => {
+    shouldMarkAsSeen = result;
+  });
+
   // If we're on a tag/list page
   if (document.querySelector('#thumbs, #tag-thumbs')) {
     const observer = new MutationObserver(() => {
