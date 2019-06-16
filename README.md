@@ -19,7 +19,7 @@ Just grab and install the extension from Firefox Add-ons listing:
 
 # Installation (Opera)
 
-Better TweetDeck has been proven to work on Opera using the [Download Chrome Extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/?display=en) add-on. Follow those steps to install Better TweetDeck on Opera :
+Wallhaven Direct Downloader has been proven to work on Opera using the [Download Chrome Extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/?display=en) add-on. Follow those steps to install Wallhaven Direct Downloader on Opera :
 
 1. Download "[Download Chrome Extension](https://addons.opera.com/en/extensions/details/download-chrome-extension-9/?display=en)"
 2. Get [Wallhaven Direct Downloader on the Chrome Web Store](https://chrome.google.com/webstore/detail/wallbase-direct-downloade/mggclgefcmlpigdbcpfheklbhflnknkf)
