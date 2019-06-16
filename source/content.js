@@ -12,6 +12,31 @@ function addDownloadLinksToThumbnails() {
   });
 }
 
+const WallhavenSennWallpapersStorageKey = 'wallhaven.seen-wallpapers';
+
+function markWallpaperAsSeen(downloadLink) {
+  const [, wallpaperId] = String(downloadLink).match(/wallhaven-([^\.]+)./);
+  const seenWallpapersRaw = localStorage.getItem(WallhavenSennWallpapersStorageKey);
+
+  try {
+    const seenWallpapersArray = Array.from(JSON.parse(seenWallpapersRaw));
+    seenWallpapersArray.push(wallpaperId);
+
+    localStorage.setItem(WallhavenSennWallpapersStorageKey, JSON.stringify(seenWallpapersArray));
+
+    const thumbnailNode = document.querySelector(`.thumb[data-wallpaper-id=${wallpaperId}]`);
+
+    if (!thumbnailNode) {
+      return;
+    }
+
+    thumbnailNode.classList.add('thumb-seen');
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e);
+  }
+}
+
 async function addDownloadLinksToThumbnail(element) {
   // If we already added downloads links, nothing to do.
   if (element.querySelector('.wbs_dl')) {
@@ -61,6 +86,11 @@ async function addDownloadLinksToThumbnail(element) {
     // We used to rely on the `download` attribute but browsers now restrict it to same-origin URLs.
     // Since Wallhaven now hosts files on a different domain than the main site, we need to use file-saver to trigger a download.
     saveAs(e.target.href, new URL(e.target.href).pathname.split('/').reverse()[0]);
+    markWallpaperAsSeen(downloadLink);
+  };
+
+  previewAnchor.onclick = () => {
+    markWallpaperAsSeen(downloadLink);
   };
 
   // Add our links to the DOM.
