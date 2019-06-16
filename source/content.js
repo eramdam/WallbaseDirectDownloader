@@ -24,7 +24,7 @@ function markWallpaperAsSeen(downloadLink) {
 
     localStorage.setItem(WallhavenSennWallpapersStorageKey, JSON.stringify(seenWallpapersArray));
 
-    const thumbnailNode = document.querySelector(`.thumb[data-wallpaper-id=${wallpaperId}]`);
+    const thumbnailNode = document.querySelector(`.thumb[data-wallpaper-id="${wallpaperId}"]`);
 
     if (!thumbnailNode) {
       return;
