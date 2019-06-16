@@ -40,7 +40,7 @@ Changelog
 
 1.3.0:
 - Wallhaven added a "PNG" indicator on thumbnails, so this means the extension can detect those way more quickly/reliably
-- The extension will now mark wallpapers as seen when downloading/previewing, if that's what you chose to do in your Browsing settings.
+- The extension will now mark wallpapers as seen when downloading/previewing, if that's what you chose to do in your Browsing settings. Note that this requires that you have a Wallhaven account and be logged in the browser.
 
 1.2.0:
 - Rewrote the code from scratch
