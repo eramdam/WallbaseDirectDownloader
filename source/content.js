@@ -77,7 +77,7 @@ async function addDownloadLinksToThumbnail(element) {
 
   // Change it so we obtain the final wallpaper URL.
   const downloadLink = thumbnailLink
-    .replace(/\/small\/([0-9a-z]+)\//i, '/full/$1/wallhaven-')
+    .replace(/.cc\/[a-z]+\/([0-9a-z]+)\//i, '.cc/full/$1/wallhaven-')
     .replace('th.wallhaven', 'w.wallhaven');
 
   const isPng = Boolean(element.querySelector('.png'));
