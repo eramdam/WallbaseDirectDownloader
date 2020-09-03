@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/eramdam/WallbaseDirectDownloader#readme",
   "dependencies": {
-    "bestzip": "^2.1.4",
+    "bestzip": "^2.1.7",
     "copy-webpack-plugin": "^5.0.3",
     "cross-zip-cli": "^1.0.0",
     "eslint": "^5.16.0",
