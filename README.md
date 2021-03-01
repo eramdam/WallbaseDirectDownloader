@@ -5,6 +5,11 @@ A Chrome/Firefox extension to download Wallhaven's wallpapers straight from the 
 
 This extension adds a direct download link to thumbnails, simply hover over a thumbnail to see it.
 
+Install (Safari)
+==========================
+
+Grab the [latest release](https://github.com/eramdam/WallbaseDirectDownloader/releases/tag/1.4.0), drop the .app into your /Applications folder and the extension should get added into Safari.
+
 Install (Chrome)
 ==========================
 
