@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6DD9330825ECA7BF003A741E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9330725ECA7BF003A741E /* AppDelegate.swift */; };
+		6DD9330B25ECA7BF003A741E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9330925ECA7BF003A741E /* Main.storyboard */; };
+		6DD9330D25ECA7BF003A741E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9330C25ECA7BF003A741E /* ViewController.swift */; };
+		6DD9330F25ECA7BF003A741E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9330E25ECA7BF003A741E /* Assets.xcassets */; };
+		6DD9331625ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6DD9331525ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6DD9331B25ECA7BF003A741E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD9331A25ECA7BF003A741E /* Cocoa.framework */; };
+		6DD9331E25ECA7BF003A741E /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9331D25ECA7BF003A741E /* SafariWebExtensionHandler.swift */; };
+		6DD9333525ECA7C0003A741E /* icon16.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9332B25ECA7C0003A741E /* icon16.png */; };
+		6DD9333625ECA7C0003A741E /* wallbase.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9332C25ECA7C0003A741E /* wallbase.ttf */; };
+		6DD9333725ECA7C0003A741E /* wallbase.eot in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9332D25ECA7C0003A741E /* wallbase.eot */; };
+		6DD9333825ECA7C0003A741E /* icon48.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9332E25ECA7C0003A741E /* icon48.png */; };
+		6DD9333925ECA7C0003A741E /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9332F25ECA7C0003A741E /* icon128.png */; };
+		6DD9333A25ECA7C0003A741E /* wallbase.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9333025ECA7C0003A741E /* wallbase.svg */; };
+		6DD9333B25ECA7C0003A741E /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9333125ECA7C0003A741E /* manifest.json */; };
+		6DD9333C25ECA7C0003A741E /* wbs.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9333225ECA7C0003A741E /* wbs.css */; };
+		6DD9333D25ECA7C0003A741E /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9333325ECA7C0003A741E /* content.js */; };
+		6DD9333E25ECA7C0003A741E /* wallbase.woff in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9333425ECA7C0003A741E /* wallbase.woff */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6DD9331725ECA7BF003A741E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DD932FB25ECA7BF003A741E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DD9331425ECA7BF003A741E;
+			remoteInfo = "Wallhaven Direct Downloader Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DD9332625ECA7BF003A741E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6DD9331625ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6DD9330325ECA7BF003A741E /* Wallhaven Direct Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wallhaven Direct Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD9330625ECA7BF003A741E /* Wallhaven_Direct_Downloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallhaven_Direct_Downloader.entitlements; sourceTree = "<group>"; };
+		6DD9330725ECA7BF003A741E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6DD9330A25ECA7BF003A741E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6DD9330C25ECA7BF003A741E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DD9330E25ECA7BF003A741E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DD9331025ECA7BF003A741E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DD9331525ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Wallhaven Direct Downloader Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD9331A25ECA7BF003A741E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6DD9331D25ECA7BF003A741E /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		6DD9331F25ECA7BF003A741E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DD9332025ECA7BF003A741E /* Wallhaven_Direct_Downloader_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wallhaven_Direct_Downloader_Extension.entitlements; sourceTree = "<group>"; };
+		6DD9332B25ECA7C0003A741E /* icon16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon16.png; path = ../../../dist/icon16.png; sourceTree = "<group>"; };
+		6DD9332C25ECA7C0003A741E /* wallbase.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = wallbase.ttf; path = ../../../dist/wallbase.ttf; sourceTree = "<group>"; };
+		6DD9332D25ECA7C0003A741E /* wallbase.eot */ = {isa = PBXFileReference; lastKnownFileType = file; name = wallbase.eot; path = ../../../dist/wallbase.eot; sourceTree = "<group>"; };
+		6DD9332E25ECA7C0003A741E /* icon48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon48.png; path = ../../../dist/icon48.png; sourceTree = "<group>"; };
+		6DD9332F25ECA7C0003A741E /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon128.png; path = ../../../dist/icon128.png; sourceTree = "<group>"; };
+		6DD9333025ECA7C0003A741E /* wallbase.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = wallbase.svg; path = ../../../dist/wallbase.svg; sourceTree = "<group>"; };
+		6DD9333125ECA7C0003A741E /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../dist/manifest.json; sourceTree = "<group>"; };
+		6DD9333225ECA7C0003A741E /* wbs.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = wbs.css; path = ../../../dist/wbs.css; sourceTree = "<group>"; };
+		6DD9333325ECA7C0003A741E /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content.js; path = ../../../dist/content.js; sourceTree = "<group>"; };
+		6DD9333425ECA7C0003A741E /* wallbase.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = wallbase.woff; path = ../../../dist/wallbase.woff; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DD9330025ECA7BF003A741E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DD9331225ECA7BF003A741E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD9331B25ECA7BF003A741E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6DD932FA25ECA7BF003A741E = {
+			isa = PBXGroup;
+			children = (
+				6DD9330525ECA7BF003A741E /* Wallhaven Direct Downloader */,
+				6DD9331C25ECA7BF003A741E /* Wallhaven Direct Downloader Extension */,
+				6DD9331925ECA7BF003A741E /* Frameworks */,
+				6DD9330425ECA7BF003A741E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6DD9330425ECA7BF003A741E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DD9330325ECA7BF003A741E /* Wallhaven Direct Downloader.app */,
+				6DD9331525ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DD9330525ECA7BF003A741E /* Wallhaven Direct Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				6DD9330625ECA7BF003A741E /* Wallhaven_Direct_Downloader.entitlements */,
+				6DD9330725ECA7BF003A741E /* AppDelegate.swift */,
+				6DD9330925ECA7BF003A741E /* Main.storyboard */,
+				6DD9330C25ECA7BF003A741E /* ViewController.swift */,
+				6DD9330E25ECA7BF003A741E /* Assets.xcassets */,
+				6DD9331025ECA7BF003A741E /* Info.plist */,
+			);
+			path = "Wallhaven Direct Downloader";
+			sourceTree = "<group>";
+		};
+		6DD9331925ECA7BF003A741E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DD9331A25ECA7BF003A741E /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DD9331C25ECA7BF003A741E /* Wallhaven Direct Downloader Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6DD9332A25ECA7C0003A741E /* Resources */,
+				6DD9331D25ECA7BF003A741E /* SafariWebExtensionHandler.swift */,
+				6DD9331F25ECA7BF003A741E /* Info.plist */,
+				6DD9332025ECA7BF003A741E /* Wallhaven_Direct_Downloader_Extension.entitlements */,
+			);
+			path = "Wallhaven Direct Downloader Extension";
+			sourceTree = "<group>";
+		};
+		6DD9332A25ECA7C0003A741E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DD9332B25ECA7C0003A741E /* icon16.png */,
+				6DD9332C25ECA7C0003A741E /* wallbase.ttf */,
+				6DD9332D25ECA7C0003A741E /* wallbase.eot */,
+				6DD9332E25ECA7C0003A741E /* icon48.png */,
+				6DD9332F25ECA7C0003A741E /* icon128.png */,
+				6DD9333025ECA7C0003A741E /* wallbase.svg */,
+				6DD9333125ECA7C0003A741E /* manifest.json */,
+				6DD9333225ECA7C0003A741E /* wbs.css */,
+				6DD9333325ECA7C0003A741E /* content.js */,
+				6DD9333425ECA7C0003A741E /* wallbase.woff */,
+			);
+			name = Resources;
+			path = "Wallhaven Direct Downloader Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DD9330225ECA7BF003A741E /* Wallhaven Direct Downloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DD9332725ECA7BF003A741E /* Build configuration list for PBXNativeTarget "Wallhaven Direct Downloader" */;
+			buildPhases = (
+				6DD932FF25ECA7BF003A741E /* Sources */,
+				6DD9330025ECA7BF003A741E /* Frameworks */,
+				6DD9330125ECA7BF003A741E /* Resources */,
+				6DD9332625ECA7BF003A741E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DD9331825ECA7BF003A741E /* PBXTargetDependency */,
+			);
+			name = "Wallhaven Direct Downloader";
+			productName = "Wallhaven Direct Downloader";
+			productReference = 6DD9330325ECA7BF003A741E /* Wallhaven Direct Downloader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6DD9331425ECA7BF003A741E /* Wallhaven Direct Downloader Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DD9332325ECA7BF003A741E /* Build configuration list for PBXNativeTarget "Wallhaven Direct Downloader Extension" */;
+			buildPhases = (
+				6DD9331125ECA7BF003A741E /* Sources */,
+				6DD9331225ECA7BF003A741E /* Frameworks */,
+				6DD9331325ECA7BF003A741E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wallhaven Direct Downloader Extension";
+			productName = "Wallhaven Direct Downloader Extension";
+			productReference = 6DD9331525ECA7BF003A741E /* Wallhaven Direct Downloader Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DD932FB25ECA7BF003A741E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					6DD9330225ECA7BF003A741E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					6DD9331425ECA7BF003A741E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 6DD932FE25ECA7BF003A741E /* Build configuration list for PBXProject "Wallhaven Direct Downloader" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6DD932FA25ECA7BF003A741E;
+			productRefGroup = 6DD9330425ECA7BF003A741E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DD9330225ECA7BF003A741E /* Wallhaven Direct Downloader */,
+				6DD9331425ECA7BF003A741E /* Wallhaven Direct Downloader Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DD9330125ECA7BF003A741E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD9330F25ECA7BF003A741E /* Assets.xcassets in Resources */,
+				6DD9330B25ECA7BF003A741E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DD9331325ECA7BF003A741E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD9333E25ECA7C0003A741E /* wallbase.woff in Resources */,
+				6DD9333525ECA7C0003A741E /* icon16.png in Resources */,
+				6DD9333B25ECA7C0003A741E /* manifest.json in Resources */,
+				6DD9333C25ECA7C0003A741E /* wbs.css in Resources */,
+				6DD9333625ECA7C0003A741E /* wallbase.ttf in Resources */,
+				6DD9333825ECA7C0003A741E /* icon48.png in Resources */,
+				6DD9333925ECA7C0003A741E /* icon128.png in Resources */,
+				6DD9333D25ECA7C0003A741E /* content.js in Resources */,
+				6DD9333725ECA7C0003A741E /* wallbase.eot in Resources */,
+				6DD9333A25ECA7C0003A741E /* wallbase.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DD932FF25ECA7BF003A741E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD9330D25ECA7BF003A741E /* ViewController.swift in Sources */,
+				6DD9330825ECA7BF003A741E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DD9331125ECA7BF003A741E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DD9331E25ECA7BF003A741E /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DD9331825ECA7BF003A741E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DD9331425ECA7BF003A741E /* Wallhaven Direct Downloader Extension */;
+			targetProxy = 6DD9331725ECA7BF003A741E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6DD9330925ECA7BF003A741E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DD9330A25ECA7BF003A741E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DD9332125ECA7BF003A741E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6DD9332225ECA7BF003A741E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6DD9332425ECA7BF003A741E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Wallhaven Direct Downloader Extension/Wallhaven_Direct_Downloader_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DZ6SL2K4W;
+				INFOPLIST_FILE = "Wallhaven Direct Downloader Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.erambert.Wallhaven-Direct-Downloader.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6DD9332525ECA7BF003A741E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Wallhaven Direct Downloader Extension/Wallhaven_Direct_Downloader_Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2DZ6SL2K4W;
+				INFOPLIST_FILE = "Wallhaven Direct Downloader Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.erambert.Wallhaven-Direct-Downloader.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6DD9332825ECA7BF003A741E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Wallhaven Direct Downloader/Wallhaven_Direct_Downloader.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2DZ6SL2K4W;
+				INFOPLIST_FILE = "Wallhaven Direct Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.erambert.Wallhaven-Direct-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6DD9332925ECA7BF003A741E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Wallhaven Direct Downloader/Wallhaven_Direct_Downloader.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2DZ6SL2K4W;
+				INFOPLIST_FILE = "Wallhaven Direct Downloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.erambert.Wallhaven-Direct-Downloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DD932FE25ECA7BF003A741E /* Build configuration list for PBXProject "Wallhaven Direct Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DD9332125ECA7BF003A741E /* Debug */,
+				6DD9332225ECA7BF003A741E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DD9332325ECA7BF003A741E /* Build configuration list for PBXNativeTarget "Wallhaven Direct Downloader Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DD9332425ECA7BF003A741E /* Debug */,
+				6DD9332525ECA7BF003A741E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DD9332725ECA7BF003A741E /* Build configuration list for PBXNativeTarget "Wallhaven Direct Downloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DD9332825ECA7BF003A741E /* Debug */,
+				6DD9332925ECA7BF003A741E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DD932FB25ECA7BF003A741E /* Project object */;
+}
