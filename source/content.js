@@ -34,7 +34,7 @@ function markWallpaperAsSeen(downloadLink) {
   }
 
   // Grab the wallpaper id from the download link
-  const [, wallpaperId] = String(downloadLink).match(/wallhaven-([^\.]+)./);
+  const [, wallpaperId] = String(downloadLink).match(/wallhaven-([^.]+)./);
   // Grab the already seen wallpapers from localStorage, default to an empty array if there are none
   const seenWallpapersRaw = localStorage.getItem(WallhavenSennWallpapersStorageKey) || '[]';
 

@@ -1,7 +1,7 @@
 {
   "name": "Wallhaven Direct Downloader",
   "version": "1.4.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "Allows you to download the wallpapers on Wallhaven directly from the search/tag/random/toplist pages",
   "content_scripts": [
     {
@@ -10,11 +10,16 @@
       "css": ["wbs.css"]
     }
   ],
-  "web_accessible_resources": ["wallbase.eot", "wallbase.ttf", "wallbase.svg", "wallbase.woff"],
+  "web_accessible_resources": [
+    {
+      "resources": ["wallbase.eot", "wallbase.ttf", "wallbase.svg", "wallbase.woff"],
+      "matches": ["https://wallhaven.cc/*"]
+    }
+  ],
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["*://wallhaven.cc/*", "*://*.wallhaven.cc/*"]
+  "host_permissions": ["*://wallhaven.cc/*", "*://*.wallhaven.cc/*"]
 }
