@@ -1,4 +1,12 @@
 import {saveAs} from 'file-saver';
+import {
+  downloadCroppedWallpaper,
+  formatResolution,
+  getCropResolution,
+  getCropSize,
+  onCropResolutionChange,
+  setCropSize
+} from './crop';
 
 async function getMarkAsSeenSetting() {
   // It's not like Wallhaven has an API or anything so our best bet here is to just crawl the settings page like it's 2003 or something.
@@ -123,7 +131,11 @@ function addDownloadLinkOnWallpaperPage() {
   // Get the link to the wallpaper file.
   const wallpaperLink = document.querySelector('#wallpaper').getAttribute('src');
 
-  // Create our button/link.
+  // Holds the button and its dropdown menu.
+  const wrapper = document.createElement('div');
+  wrapper.id = 'wbs-dl';
+
+  // Create our button/link, it downloads the wallpaper cropped to the custom resolution if one is set.
   const downloadButton = document.createElement('div');
   downloadButton.className = 'button';
   downloadButton.id = 'wbs-dl-button';
@@ -131,25 +143,144 @@ function addDownloadLinkOnWallpaperPage() {
   const downloadLink = document.createElement('a');
   const iconElement = document.createElement('i');
   iconElement.className = 'icon icon-download';
+  const downloadLabel = document.createElement('span');
 
   downloadLink.setAttribute('href', wallpaperLink);
   downloadLink.setAttribute('target', '_blank');
-  downloadLink.insertAdjacentText('beforeend', ' Download this wallpaper');
-  downloadLink.insertAdjacentElement('afterbegin', iconElement);
+  downloadLink.appendChild(iconElement);
+  downloadLink.appendChild(downloadLabel);
   downloadButton.appendChild(downloadLink);
 
-  // Add a handler to the download element.
-  downloadButton.onclick = e => {
-    e.preventDefault();
+  // Toggle on the right side of the button, like Wallhaven's own favorites button.
+  const toggle = document.createElement('a');
+  toggle.className = 'wbs-dl-toggle';
+  toggle.setAttribute('href', '#');
+  toggle.setAttribute('title', 'Set a custom size');
+  toggle.setAttribute('aria-haspopup', 'true');
+  toggle.setAttribute('aria-expanded', 'false');
+  const caret = document.createElement('i');
+  caret.className = 'fas fa-fw fa-caret-down';
+  toggle.appendChild(caret);
+  downloadButton.appendChild(toggle);
+
+  const menu = document.createElement('div');
+  menu.className = 'wbs-dl-menu';
+
+  // Width × height inputs, saved when leaving them. An empty one counts as 0, which turns the custom size off.
+  const form = document.createElement('form');
+  form.className = 'wbs-dl-menu-size';
+
+  const createInput = label => {
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.min = '0';
+    input.max = '99999';
+    input.step = '1';
+    input.placeholder = '0';
+    input.setAttribute('aria-label', label);
+    return input;
+  };
+  const widthInput = createInput('Width');
+  const heightInput = createInput('Height');
+
+  const times = document.createElement('span');
+  times.textContent = '×';
+
+  form.appendChild(widthInput);
+  form.appendChild(times);
+  form.appendChild(heightInput);
+
+  menu.appendChild(form);
+
+  wrapper.appendChild(downloadButton);
+  wrapper.appendChild(menu);
+
+  function renderResolution(resolution) {
+    downloadLabel.textContent = resolution
+      ? ` Download at ${formatResolution(resolution)}`
+      : ' Download this wallpaper';
+    // Don't overwrite what the user is typing.
+    if (!form.contains(document.activeElement)) {
+      const {width, height} = getCropSize();
+      widthInput.value = width || '';
+      heightInput.value = height || '';
+    }
+  }
+
+  function setOpen(isOpen) {
+    wrapper.classList.toggle('wbs-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  function downloadOriginal() {
     // We used to rely on the `download` attribute but browsers now restrict it to same-origin URLs.
     // Since Wallhaven now hosts files on a different domain than the main site, we need to use file-saver to trigger a download.
     saveAs(wallpaperLink, new URL(wallpaperLink).pathname.split('/').reverse()[0]);
+  }
+
+  // Add a handler to the download element.
+  downloadLink.onclick = async e => {
+    e.preventDefault();
+    if (!getCropResolution()) {
+      downloadOriginal();
+      return;
+    }
+    if (downloadButton.classList.contains('wbs_busy')) {
+      return;
+    }
+
+    downloadButton.classList.add('wbs_busy');
+    downloadLabel.textContent = ' Cropping…';
+    try {
+      await downloadCroppedWallpaper(wallpaperLink);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    } finally {
+      downloadButton.classList.remove('wbs_busy');
+      renderResolution(getCropResolution());
+    }
   };
+
+  toggle.onclick = e => {
+    e.preventDefault();
+    setOpen(!wrapper.classList.contains('wbs-open'));
+  };
+
+  // Close when clicking anywhere else or pressing Escape.
+  // Listen to mousedown so a click that starts in the menu and ends outside of it doesn't close it.
+  document.addEventListener('mousedown', e => {
+    if (!wrapper.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      setOpen(false);
+    }
+  });
+
+  // `change` fires when leaving a field or pressing Enter, not on every keystroke.
+  form.onchange = () => {
+    setCropSize({width: widthInput.value, height: heightInput.value});
+    // Once focus has actually left, show what was saved (e.g. too large values get capped).
+    setTimeout(() => renderResolution(getCropResolution()), 0);
+  };
+  // A form with two fields and no submit button doesn't submit on Enter, so leave the field ourselves.
+  form.onkeydown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.target.blur();
+    }
+  };
+
+  renderResolution(getCropResolution());
+  onCropResolutionChange(renderResolution);
 
   // Add the button to the DOM.
   document
     .querySelector('.sidebar-section[data-storage-id="showcase-tools"] .showcase-tools')
-    .insertAdjacentElement('beforebegin', downloadButton);
+    .insertAdjacentElement('beforebegin', wrapper);
 }
 
 // Hacky way to wait for everything to be ready

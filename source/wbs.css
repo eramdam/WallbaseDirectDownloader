@@ -113,3 +113,115 @@ img[src*="orig"]~.wbs_dl {
   margin-left: -4px;
   color: #4CA469;
 }
+
+.wbs_busy {
+  cursor: progress;
+  animation: wbs-pulse 1s ease-in-out infinite;
+}
+
+@keyframes wbs-pulse {
+  50% {
+    opacity: .4;
+  }
+}
+
+#wbs-dl {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: calc(100% - .5em);
+  margin: .5em .25em 1.5em;
+  vertical-align: top;
+}
+
+#wbs-dl-button {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  text-align: left;
+  overflow: visible;
+}
+
+#wbs-dl-button > a {
+  color: inherit;
+}
+
+#wbs-dl-button > a:first-child {
+  flex: 1;
+  padding: .5em 1em;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wbs-dl-toggle {
+  padding: .5em .6em;
+  border-left: 1px solid rgba(255, 255, 255, .15);
+  box-shadow: -2px 0 0 -1px rgba(0, 0, 0, .4);
+}
+
+.wbs-dl-toggle i {
+  transition: transform .15s;
+}
+
+#wbs-dl.wbs-open .wbs-dl-toggle i {
+  transform: rotate(180deg);
+}
+
+.wbs-dl-menu {
+  display: none;
+  margin-top: 4px;
+  border-radius: 3px;
+  background-color: #183640;
+  color: #ddd;
+  text-shadow: -1px -1px 0 #000;
+  white-space: normal;
+  cursor: default;
+}
+
+#wbs-dl.wbs-open .wbs-dl-menu {
+  display: block;
+  animation: wbs-menu-in .15s;
+}
+
+@keyframes wbs-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.wbs-dl-menu-size {
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  padding: .5em 1em;
+}
+
+.wbs-dl-menu-size input {
+  flex: 1;
+  width: 0;
+  padding: .2em .4em;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .3);
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.wbs-dl-menu-size input::-webkit-inner-spin-button,
+.wbs-dl-menu-size input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wbs-dl-menu-size input:focus::placeholder {
+  color: transparent;
+}
+
+.wbs-dl-menu-size input:invalid {
+  border-color: #c44;
+}
